@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:fragment="header">
+    <nav class="navbar navbar-expand-sm bg navbar-dark fixed-top shadow p-3 mb-5" style="background-color: #00bb2d">
+        <div class="container d-flex flex-column flex-md-row justify-content-between">
+            <!-- Brand -->
+            <img class="navbar-brand" href="/" src="fragment/logo.png" alt="+Cotas" width="58" height="50">
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" style="color: white" id="navbardrop1" data-toggle="dropdown">+Cotas</a>
+                    <div class="dropdown-menu" style="background-color: #00bb2d">
+                        <a class="dropdown-item" href="/introduccion" style="color: white">Introducción</a>
+                        <a class="dropdown-item" href="/mision_vision_valores" style="color: white">Misión, Visión y Valores</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" style="color: white" id="navbardrop2" data-toggle="dropdown">Ayúdanos</a>
+                    <div class="dropdown-menu" style="background-color: #00bb2d">
+                        <a class="dropdown-item" href="/colabora" style="color: white">Colabora</a>
+                        <a class="dropdown-item" href="/socio" style="color: white">Socio</a>
+                        <a class="dropdown-item" href="/socio+" style="color: white">Socio+</a>
+                        <a class="dropdown-item" href="/apadrina" style="color: white">Apadrina</a>
+                        <a class="dropdown-item" href="/voluntariado" style="color: white">Voluntariado</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/veterinario" style="color: white">Veterinario</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ludogat" style="color: white">Ludogat</a>
+                </li>
+                <!-- Dropdown -->
+                <li th:unless="${#authentication.name=='anonymousUser'}" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" style="color: white" id="navbardrop3" data-toggle="dropdown" sec:authentication="name">
+                        User
+                    </a>
+                    <div class="dropdown-menu" style="background-color: #00bb2d">
+                        <a class="dropdown-item" href="/profile" style="color: white">Profile</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#myModal" style="color: white">Logout</a>
+                    </div>
+                </li>
+
+                <li th:if="${#authentication.name=='anonymousUser'}" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" style="color: white" id="navbardrop4" data-toggle="dropdown">
+                        Cuenta
+                    </a>
+                    <div class="dropdown-menu" style="background-color: #00bb2d">
+                        <a class="dropdown-item" href="/login" style="color: white">Inicia Sesión</a>
+                        <a class="dropdown-item" href="/createUser" style="color: white">No Tengo Cuenta</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Logout</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">Are you sure you want logout?</div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <a type="submit" class="btn btn-success" href="/logout" onclick="">Yes</a>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
