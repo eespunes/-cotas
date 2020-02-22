@@ -22,57 +22,63 @@ public class WebController {
         this.userController = userController;
     }
 
-    @GetMapping("/+cotas")
-    public String mascotas() { return "redirect:/+cotas"; }
-
     @GetMapping("/introduccion")
     public String introduccion() {
-        return "redirect:/introduccion";
+        return "introduccion";
     }
 
     @GetMapping("/mision_vision_valores")
     public String mision_vision_valores() {
-        return "redirect:/mision_vision_valores";
+        return "mision_vision_valores";
     }
 
     @GetMapping("/ayudanos")
-    public String ayudanos() { return "redirect:/ayudanos"; }
+    public String ayudanos() {
+        return "ayudanos";
+    }
 
     @GetMapping("/colabora")
     public String colabora() {
-        return "redirect:/colabora";
+        return "colabora";
     }
 
     @GetMapping("/socio")
     public String socio() {
-        return "redirect:/socio";
+        return "socio";
+    }
+
+    @GetMapping("/socio+")
+    public String socioPlus() {
+        return "socio+";
     }
 
     @GetMapping("/apadrina")
     public String apadrina() {
-        return "redirect:/apadrina";
+        return "apadrina";
     }
 
     @GetMapping("/apadrina/animales")
     public String verAnimales() {
-        return "redirect:/apadrina/animales";
+        return "apadrina/animales";
     }
 
     @GetMapping("/voluntariado")
     public String voluntariado() {
-        return "redirect:/voluntariado";
+        return "voluntariado";
     }
 
     @GetMapping("/donacion")
-    public String donacion() { return "redirect:/donacion"; }
+    public String donacion() {
+        return "donacion";
+    }
 
     @GetMapping("/veterinario")
     public String veterinario() {
-        return "redirect:/veterinario";
+        return "veterinario";
     }
 
     @GetMapping("/ludogat")
     public String ludogat() {
-        return "redirect:/ludogat";
+        return "ludogat";
     }
 }

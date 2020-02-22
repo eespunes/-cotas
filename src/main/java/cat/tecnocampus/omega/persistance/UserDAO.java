@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 import java.util.List;
@@ -14,7 +15,7 @@ public class UserDAO {
 
     private JdbcTemplate jdbcTemplate;
 
-    private final String INSERT_USER = "INSERT INTO Users (username, password, first_name, last_name, email, birthday) VALUES(?, ?, ?, ?, ?, ?)";
+    private final String INSERT_USER = "INSERT INTO Users (username, password, first_name, last_name, email, birthday,visible,image) VALUES(?, ?, ?, ?, ?, ?,?,?)";
     private final String FIND_ALL = "SELECT * FROM Users";
     private final String FIND_BY_USERNAME = "SELECT * FROM Users WHERE username = ?";
     private final String DELETE_USER = "UPDATE Users SET enable=false WHERE username=?";
@@ -27,6 +28,7 @@ public class UserDAO {
                 .lastName(resultSet.getString("last_name"))
                 .email(resultSet.getString("email"))
                 .birthday(resultSet.getDate("birthday"))
+                .birthday(resultSet.getDate("birthday"))
                 .build();
     };
 
@@ -34,8 +36,8 @@ public class UserDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public int insertUser(User user) {
-        return jdbcTemplate.update(INSERT_USER, user.getUsername(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getBirthday());
+    public int insertUser(User user) {//, MultipartFile photo) {
+        return jdbcTemplate.update(INSERT_USER, user.getUsername(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getBirthday(), true, 0);
     }
 
     public List<User> findAll() {
