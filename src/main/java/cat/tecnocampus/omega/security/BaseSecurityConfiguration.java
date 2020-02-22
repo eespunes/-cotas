@@ -13,11 +13,8 @@ public class BaseSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/createUser").permitAll()
                 .antMatchers("/allUsers").hasRole("ADMIN")
                 //.antMatchers("/profile/users/*").permitAll()
-                .antMatchers("/user").authenticated()
+                .antMatchers("/registrarAnimal").hasRole("ADMIN")
                 .antMatchers("/users/{username}").authenticated()
-
-                .antMatchers("/weather").permitAll()
-                .antMatchers("/time").permitAll()
 
                 .antMatchers("/exercise/**").authenticated()
                 .antMatchers("/challenge/all").permitAll()

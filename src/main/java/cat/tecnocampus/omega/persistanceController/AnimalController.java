@@ -20,6 +20,10 @@ public class AnimalController {
     public int addAnimal(Animal animal) {
         return animalDAO.insertAnimal(animal);
     }
+    @Transactional
+    public int addType(String type) {
+        return animalDAO.insertType(type);
+    }
 
     public List<Animal> getAll() {
 

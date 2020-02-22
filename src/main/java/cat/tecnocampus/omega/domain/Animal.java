@@ -1,5 +1,7 @@
 package cat.tecnocampus.omega.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Animal {
 
     private String id;
@@ -9,10 +11,13 @@ public class Animal {
     private int age;
     private User owner;
 
-    public Animal(String id, String name,String description, String type, int age, User owner) {
+    public Animal() {
+    }
+
+    public Animal(String id, String name, String description, String type, int age, User owner) {
         this.id = id;
         this.name = name;
-        this.description=description;
+        this.description = description;
         this.type = type;
         this.age = age;
         this.owner = owner;

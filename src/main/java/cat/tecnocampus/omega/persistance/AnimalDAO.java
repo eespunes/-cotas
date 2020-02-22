@@ -16,8 +16,10 @@ public class AnimalDAO {
     private UserDAO userDAO;
     private final String FIND_ALL = "SELECT * FROM Animals";
     private final String FIND_BY_ID = "SELECT * FROM Animals WHERE animal_id = ?";
-    private final String INSERT_ANIMAL = "INSERT INTO Animals (animal_ID, animal_name,animal_description, animal_type, animal_age, animal_owner) VALUES(?, ?, ?, ?, ?,?)";
+    private final String INSERT_ANIMAL = "INSERT INTO Animals (animal_ID, animal_name,animal_description, animal_type, animal_age, animal_owner,photo) VALUES(?, ?, ?, ?, ?,?,?)";
     private final String FIND_BY_TYPE = "SELECT * FROM Animals WHERE animal_type=?";
+    private final String INSERT_TYPE = "INSERT INTO AnimalTypes (type_name) VALUES (?)";
+    private final String FIND_TYPES = "SELECT * from AnimalTypes";
 
 
     public AnimalDAO(JdbcTemplate jdbcTemplate, UserDAO userDAO) {
@@ -29,6 +31,15 @@ public class AnimalDAO {
         Animal animal = new Animal(resultSet.getString("animal_ID"), resultSet.getString("animal_name"), resultSet.getString("animal_description"), resultSet.getString("animal_type"), resultSet.getInt("animal_age"), userDAO.findByUsername(resultSet.getString("animal_owner")));
         return animal;
     }
+
+    private String typeMapper(ResultSet resultSet) throws SQLException {
+        return resultSet.getString("type_name");
+    }
+
+    private RowMapper<String> typeMapperEager = (resultSet, i) -> {
+        return typeMapper(resultSet);
+    };
+
 
     public List<Animal> findByType(String animal) {
         return jdbcTemplate.query(FIND_BY_TYPE, new Object[]{animal, "Animal"}, mapperEager);
@@ -48,5 +59,17 @@ public class AnimalDAO {
 
     public int insertAnimal(Animal animal) {
         return jdbcTemplate.update(INSERT_ANIMAL, animal.getId(), animal.getName(), animal.getDescription(), animal.getType(), animal.getAge(), animal.getOwner());
+    }
+
+    public List<String> findTypes() {
+        return jdbcTemplate.query(FIND_TYPES, new Object[]{}, typeMapperEager);
+    }
+
+
+    public int insertType(String type) {
+        if (!findTypes().contains(type))
+            return jdbcTemplate.update(INSERT_TYPE, type);
+        else return 1;
+
     }
 }
