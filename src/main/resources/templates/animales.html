@@ -84,8 +84,8 @@
                         <div class="row">
                             <a th:if="${animal.owner==null}" class="btn btn-outline-success"
                                th:href="@{'/animal/apadrinado/' + ${animal.id}}">Apadrina-me</a>
-                            <a th:unless="${animal.owner==null}" class="btn btn-outline-warning"
-                               th:href="@{'/profile/users/' + ${animal.owner}}"
+                            <a th:unless="${animal.owner==null}" class="btn btn-warning"
+                               th:href="@{'/profile/users/' + ${animal.owner.username}}"
                                th:text="${'Apadrinado por '+animal.owner.username}"></a>
                         </div>
                     </div>

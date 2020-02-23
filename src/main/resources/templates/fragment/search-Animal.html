@@ -36,7 +36,7 @@
                 <h5>Filtra por Tipo de Animal</h5>
                 <div class="dropdown-divider"></div>
                 <a th:each="type : ${typeList}" class="dropdown-item"
-                   th:href="@{'/animals/all/' + ${type}}" th:text="${type}"/>
+                   th:href="@{'/animal/all/' + ${type}}" th:text="${type}"/>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" th:href="'/animal/all'">Select All</a>
             </div>

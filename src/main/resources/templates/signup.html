@@ -28,6 +28,7 @@
                 reader.readAsDataURL(input.files[0]);
             }
         };
+
         function buttonSubmitClicked(event) {
 
             if (!document.getElementById("InputFile").value) {
@@ -46,6 +47,7 @@
             background-color: #C09A6B;
             margin: 0 0 150px;
         }
+
         footer {
             position: absolute;
             left: 0;
@@ -69,6 +71,7 @@
             z-index: 2;
             padding: 30px;
         }
+
         #blah {
             border-radius: 50%;
         }
@@ -78,7 +81,7 @@
 <body>
 <div th:replace="fragment/header :: header"></div>
 <div id="content" align="center"
-     style="background-image: linear-gradient(#e6fad5,#C09A6B);">
+     style="margin-top:50px;background-image: linear-gradient(#e6fad5,#C09A6B);">
     <form class="needs-validation" novalidate method="post" enctype="multipart/form-data" th:object="${createUser}">
         <div class="container" align="center">
             <div class="jumbotron shadow p-3 mb-5" style="background-color: #c4e6ff ;">
@@ -135,7 +138,9 @@
                                 Acepto los términos y condiciones
                             </label>
                         </div>
-                        <button class="btn btn-primary" onclick="buttonSubmitClicked(event)" type="submit" value="createUser">Registrarse</button>
+                        <button class="btn btn-primary" onclick="buttonSubmitClicked(event)" type="submit"
+                                value="createUser">Registrarse
+                        </button>
                         <script>
 
                         </script>
