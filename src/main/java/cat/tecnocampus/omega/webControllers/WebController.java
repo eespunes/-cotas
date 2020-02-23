@@ -81,28 +81,33 @@ public class WebController {
         return "veterinario";
     }
 
+    @GetMapping("/seguro")
+    public String seguro() {
+        return "seguro";
+    }
+
     @GetMapping("/ludogat")
     public String ludogat() {
         return "ludogat";
     }
 
 
-    @GetMapping("registrarAnimal")
-    public String getCreateUser(Model model) {
-        model.addAttribute(new Animal());
-//        model.addAttribute("categoryList",animalController.getTypes());
-        //return "RegisterUser";
-        return "registrarAnimal";
-    }
-
-    @PostMapping("registrarAnimal")
-    public String postCreateUser(@Valid Animal animal, @RequestParam("photo") MultipartFile photo, Errors errors, Model model, RedirectAttributes redirectAttributes) {
-        if (errors.hasErrors()) {
-            model.addAttribute("errors", errors);
-            return "signup";
-        }
-        animalController.addType(animal.getType());
-        animalController.addAnimal(animal);
-        return "redirect:/introduccion";
-    }
+//    @GetMapping("registrarAnimal")
+//    public String getCreateUser(Model model) {
+//        model.addAttribute(new Animal());
+////        model.addAttribute("categoryList",animalController.getTypes());
+//        //return "RegisterUser";
+//        return "registrarAnimal";
+//    }
+//
+//    @PostMapping("registrarAnimal")
+//    public String postCreateUser(@Valid Animal animal, @RequestParam("photo") MultipartFile photo, Errors errors, Model model, RedirectAttributes redirectAttributes) {
+//        if (errors.hasErrors()) {
+//            model.addAttribute("errors", errors);
+//            return "signup";
+//        }
+//        animalController.addType(animal.getType());
+//        animalController.addAnimal(animal);
+//        return "redirect:/introduccion";
+//    }
 }

@@ -12,11 +12,13 @@ public class UserController {
 
     private final UserDAO userDAO;
 
-    public UserController(UserDAO userDAO){
+    public UserController(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
+
     @Transactional
     public int addUser(User user) {
+        userDAO.insertRole(user);
         return userDAO.insertUser(user);
     }
 

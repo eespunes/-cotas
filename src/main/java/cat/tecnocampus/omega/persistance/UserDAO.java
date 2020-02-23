@@ -16,6 +16,7 @@ public class UserDAO {
     private JdbcTemplate jdbcTemplate;
 
     private final String INSERT_USER = "INSERT INTO Users (username, password, first_name, last_name, email, birthday,visible,image) VALUES(?, ?, ?, ?, ?, ?,?,?)";
+    private final String INSERT_ROLE = "INSERT INTO Roles (role,username) VALUES(?, ?)";
     private final String FIND_ALL = "SELECT * FROM Users";
     private final String FIND_BY_USERNAME = "SELECT * FROM Users WHERE username = ?";
     private final String DELETE_USER = "UPDATE Users SET enable=false WHERE username=?";
@@ -40,6 +41,10 @@ public class UserDAO {
         return jdbcTemplate.update(INSERT_USER, user.getUsername(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getEmail(), user.getBirthday(), true, 0);
     }
 
+    public int insertRole(User user) {
+        return jdbcTemplate.update(INSERT_ROLE, "USER", user.getUsername());
+    }
+
     public List<User> findAll() {
         return jdbcTemplate.query(FIND_ALL, new BeanPropertyRowMapper<>(User.class));
     }
@@ -47,6 +52,7 @@ public class UserDAO {
     public User findByUsername(String username) {
         return jdbcTemplate.queryForObject(FIND_BY_USERNAME, new Object[]{username}, mapper);
     }
+
 
     public int deleteUser(User user) {
         return jdbcTemplate.update(DELETE_USER, user.getUsername());
