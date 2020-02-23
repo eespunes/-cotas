@@ -61,7 +61,7 @@ public class AnimalDAO {
 
 
     public List<Animal> findByType(String animal) {
-        return jdbcTemplate.query(FIND_BY_TYPE, new Object[]{animal, "Animal"}, mapperEager);
+        return jdbcTemplate.query(FIND_BY_TYPE, new Object[]{animal}, mapperEager);
     }
 
     private RowMapper<Animal> mapperEager = (resultSet, i) -> {
