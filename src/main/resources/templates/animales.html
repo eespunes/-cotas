@@ -108,6 +108,11 @@
                 <a href="/registrarAnimal"
                    class="btn btn-info">Registra</a>
             </div>
+            <div class="col-md-2" align="center" th:if="${#authentication.name=='anonymousUser'}">
+                <p>Registra un animal para apadrinar</p>
+                <a href="/login"
+                   class="btn btn-info">Inicia Sesión</a>
+            </div>
         </div>
     </div>
 </div>
