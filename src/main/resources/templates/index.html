@@ -10,8 +10,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
         body {
             background-color: #C09A6B;
+            margin: 0 0 150px;
+        }
+        footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 150px;
+            width: 100%;
         }
 
         #background {
@@ -29,7 +42,7 @@
             z-index: 2;
             padding: 30px;
         }
-        img {
+        #blah {
             border-radius: 5%;
         }
     </style>
@@ -39,7 +52,7 @@
 <div id="content" style="margin-top: 50px;background-image: linear-gradient(#e6fad5,#C09A6B);">
 
     <div align="center">
-        <img src="icons/1.jpg" alt="Index" width="1000">
+        <img id="blah" src="icons/1.jpg" alt="Index" width="750">
     </div>
 </div>
 <div id="background"></div>

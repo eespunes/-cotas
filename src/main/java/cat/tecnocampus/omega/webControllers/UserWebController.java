@@ -1,18 +1,18 @@
 package cat.tecnocampus.omega.webControllers;
 
+import cat.tecnocampus.omega.domain.Image;
 import cat.tecnocampus.omega.persistanceController.UserController;
 import cat.tecnocampus.omega.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.UnsatisfiedServletRequestParameterException;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.io.IOException;
 import java.security.Principal;
 
 @Controller
@@ -50,12 +50,13 @@ public class UserWebController {
     }
 
     @PostMapping("createUser")
-    public String postCreateUser(@Valid User user, Errors errors, Model model, RedirectAttributes redirectAttributes) {
+    public String postCreateUser(@Valid User user, @RequestParam("photo") MultipartFile photo, Errors errors, Model model, RedirectAttributes redirectAttributes) throws IOException {
         if (errors.hasErrors()) {
             model.addAttribute("errors", errors);
             return "signup";
         }
         model.addAttribute("username", user.getUsername());
+        user.setImage(new Image(photo.getBytes()));
         userController.addUser(user);
         redirectAttributes.addAttribute("username", user.getUsername());
         return "redirect:/users/{username}";
@@ -75,7 +76,7 @@ public class UserWebController {
         }
 
 
-        return "error/principalError";
+        return "/";
     }
 
     @GetMapping("profile")

@@ -1,5 +1,6 @@
 package cat.tecnocampus.omega.persistanceController;
 
+import cat.tecnocampus.omega.domain.Image;
 import cat.tecnocampus.omega.domain.User;
 import cat.tecnocampus.omega.persistance.UserDAO;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,9 @@ public class UserController {
 
     @Transactional
     public int addUser(User user) {
-        userDAO.insertRole(user);
-        return userDAO.insertUser(user);
+        userDAO.insertImage(user.getImage());
+        userDAO.insertUser(user);
+        return userDAO.insertRole(user);
     }
 
     public List<User> findAll() {

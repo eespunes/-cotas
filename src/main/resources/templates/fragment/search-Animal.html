@@ -14,7 +14,7 @@
             var input, filter, ul, li, a, i;
             input = document.getElementById('search');
             filter = input.value.toUpperCase();
-            ul = document.getElementById("tutorials");
+            ul = document.getElementById("animals");
             li = ul.getElementsByTagName('li');
 
             for (i = 0; i < li.length; i++) {
@@ -31,24 +31,14 @@
 <body>
 <div th:fragment="search-Tutorial">
     <div style="padding-left: 10%">
-        <div class="row " align="left">
-            <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="search" class="form-control input-lg shadow p-3 mb-5" id="search"
-                           onkeyup="myFunction()"
-                           placeholder="Search" aria-label="Search"/>
-                </div>
-            </div>
-        </div>
         <div class="row" align="center">
-            <h5>Filter by categories</h5>
-        </div>
-        <div class="row" align="center">
-            <div class="jumbotron shadow p-3 mb-5" style=" background-color: #ffffff" aria-labelledby="navbarDropdown">
-                <a th:each="category : ${categoryList}" class="dropdown-item"
-                   th:href="@{'/tutorial/all/' + ${category.name}}" th:text="${category.name}"/>
+            <div class="jumbotron shadow p-3 mb-5" style=" background-color: #c4e6ff" aria-labelledby="navbarDropdown">
+                <h5>Filtra por Tipo de Animal</h5>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" th:href="'/tutorial/all'">Select All</a>
+                <a th:each="type : ${typeList}" class="dropdown-item"
+                   th:href="@{'/animals/all/' + ${type}}" th:text="${type}"/>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" th:href="'/animal/all'">Select All</a>
             </div>
         </div>
     </div>

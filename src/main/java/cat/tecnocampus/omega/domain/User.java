@@ -26,6 +26,8 @@ public class User {
     @DateTimeFormat(pattern = "dd/mm/yyyy")
     private Date birthday;
 
+    private Image image;
+
     public User() {}
 
     public User(UserBuilder builder) {
@@ -35,6 +37,7 @@ public class User {
         this.lastName = builder.lastName;
         this.email = builder.email;
         this.birthday = builder.birthday;
+        this.image=builder.image;
     }
 
     public String getUsername() {
@@ -89,6 +92,14 @@ public class User {
         this.birthday = birthday;
     }
 
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
     public static class UserBuilder {
         private String username;
         private String password;
@@ -96,6 +107,7 @@ public class User {
         private String lastName;
         private String email;
         private Date birthday;
+        private Image image;
 
         public UserBuilder() {}
 
@@ -126,6 +138,11 @@ public class User {
 
         public UserBuilder birthday(Date birthday) {
             this.birthday = birthday;
+            return this;
+        }
+
+        public UserBuilder image(Image image) {
+            this.image = image;
             return this;
         }
 

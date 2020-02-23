@@ -10,8 +10,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
         body {
             background-color: #C09A6B;
+            margin: 0 0 150px;
+        }
+        footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 100px;
+            width: 100%;
         }
 
         #background {
@@ -43,7 +56,7 @@
             display: table;
         }
 
-        img {
+        #blah {
             border-radius: 5%;
         }
     </style>
@@ -51,11 +64,11 @@
 <body>
 <div th:replace="fragment/header :: header"></div>
 <div id="content" align="center"
-     style="margin-top: 50px;background-image: linear-gradient(#e6fad5,#C09A6B);">
+     style="margin-top: 50px;margin-bottom: -50px;background-image: linear-gradient(#e6fad5,#C09A6B);">
     <h1>Apadrina</h1>
     <div class="row">
         <div class="column">
-            <img src="icons/5.jpg" style="width:75%">
+            <img  id="blah" src="icons/5.jpg" style="width:75%">
         </div>
         <div class="column">
             <div class="jumbotron  shadow p-3 mb-5" align="left" style="background-color: #c4e6ff ;">
@@ -79,6 +92,10 @@
                 <p align="center">
                     <button type="submit" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top"
                             title="Apoya con una donación"><img src="icons/Paypal.webp" width="100"></button>
+                </p>
+                <p align="center">
+                    <a href="/animal/all"
+                       class="btn btn-info">Ver Animales</a>
                 </p>
             </div>
         </div>
