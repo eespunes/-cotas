@@ -75,7 +75,7 @@
             <div class="col-md-2" align="center">
                 <div th:replace="fragment/search-Animal :: search-Tutorial"></div>
             </div>
-            <ul class="col-md-8" id="tutorials">
+            <ul class="col-md-8" style="padding-right: 2%;" id="tutorials">
                 <h3 th:if="${animalList.size()==0}">Actualmente no tenemos animales para apadrinar</h3>
                 <li class="row jumbotron shadow p-3 mb-5" style=" background-color: #c4e6ff"
                     th:each="animal : ${animalList}">
