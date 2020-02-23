@@ -33,4 +33,7 @@ public class AnimalController {
         return animalDAO.findById(id);
     }
 
+    public List<String> getTypes() {
+        return animalDAO.findTypes();
+    }
 }
