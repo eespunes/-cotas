@@ -16,43 +16,41 @@
                     aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle js-scroll-trigger" href="#" style="color: black"
-                           id="navbardrop1" data-toggle="dropdown">+Cotas</a>
-                        <div class="dropdown-menu" style="background-color: #c4e6ff">
-                            <a class="dropdown-item js-scroll-trigger" href="/introduccion" style="color: black">Introducción</a>
-                            <a class="dropdown-item js-scroll-trigger" href="/mision_vision_valores"
-                               style="color: black">Misión, Visión y Valores</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link  js-scroll-trigger" href="/introduccion" style="color: black">Introducción</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle js-scroll-trigger" href="#" style="color: black"
-                           id="navbardrop2" data-toggle="dropdown">Ayúdanos</a>
+                           id="navbardrop1" data-toggle="dropdown">Servicios</a>
                         <div class="dropdown-menu" style="background-color: #c4e6ff">
-                            <a class="dropdown-item js-scroll-trigger" href="/colabora"
-                               style="color: black">Colabora</a>
-                            <a class="dropdown-item js-scroll-trigger" href="/socio" style="color: black">Socio</a>
-                            <a class="dropdown-item js-scroll-trigger" href="/socio+" style="color: black">Socio+</a>
-                            <a class="dropdown-item js-scroll-trigger" href="/apadrina"
-                               style="color: black">Apadrina</a>
-                            <a class="dropdown-item js-scroll-trigger" href="/voluntariado" style="color: black">Voluntariado</a>
-                            <a class="dropdown-item js-scroll-trigger" href="/donacion"
-                               style="color: black">Donación</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle js-scroll-trigger" href="#" style="color: black"
-                           id="navbardrop5" data-toggle="dropdown">Veterinario</a>
-                        <div class="dropdown-menu" style="background-color: #c4e6ff">
-                            <a class="dropdown-item js-scroll-trigger" href="/veterinario"
-                               style="color: black">Veterinario</a>
-                            <a class="dropdown-item js-scroll-trigger" href="/seguro" style="color: black">Seguro</a>
+                            <a class="dropdown-item js-scroll-trigger" href="/mascotas" style="color: black">+Cotas</a>
+                            <a class="dropdown-item js-scroll-trigger" href="/ludogat" style="color: black">Ludogat</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  js-scroll-trigger" href="/ludogat" style="color: black">Ludogat</a>
+                        <a class="nav-link  js-scroll-trigger" href="/cliente" style="color: black">Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  js-scroll-trigger" href="/contacto" style="color: black">Contacto</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle js-scroll-trigger" href="#" style="color: black"
+                           id="navbardrop2" data-toggle="dropdown">+</a>
+                        <div class="dropdown-menu" style="background-color: #c4e6ff">
+                            <a class="dropdown-item js-scroll-trigger" href="/forma_juridica" style="color: black">Forma Jurídica</a>
+                            <a class="dropdown-item js-scroll-trigger" href="/medio_ambiente" style="color: black">Medio Ambiente</a>
+                            <a class="dropdown-item js-scroll-trigger" href="/prl" style="color: black">PRL</a>
+                            <a class="dropdown-item js-scroll-trigger" href="/competencia" style="color: black">Competencia</a>
+                            <a class="dropdown-item js-scroll-trigger" href="/dafo" style="color: black">DAFO</a>
+                            <a class="dropdown-item js-scroll-trigger" href="/organigrama" style="color: black">Organigrama</a>
+                            <a class="dropdown-item js-scroll-trigger" href="/publicidad" style="color: black">Publicidad</a>
+                            <a class="dropdown-item js-scroll-trigger" href="/inversion_coste" style="color: black">Inversión Coste</a>
+                            <a class="dropdown-item js-scroll-trigger" href="/contabilidad_ratios_1" style="color: black">Contabilidad y Ratios I</a>
+                            <a class="dropdown-item js-scroll-trigger" href="/contabilidad_ratios_2" style="color: black">Contabilidad y Ratios II</a>
+                        </div>
                     </li>
                     <!-- Dropdown -->
                     <li th:unless="${#authentication.name=='anonymousUser'}" class="nav-item dropdown">

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/html">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>+Cotas</title>
+    <title>Forma Jurídica</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -19,6 +19,7 @@
             background-color: #C09A6B;
             margin: 0 0 150px;
         }
+
         footer {
             position: absolute;
             left: 0;
@@ -32,7 +33,7 @@
             top: 0px;
             left: 0px;
             width: 100%;
-            height: 50%;
+            height: 40%;
             background-color: #e6fad5;
             z-index: 1;
         }
@@ -54,23 +55,41 @@
             clear: both;
             display: table;
         }
-        iframe {
+        #blah {
             border-radius: 5%;
         }
+
     </style>
 </head>
 <body>
 <div th:replace="fragment/header :: header"></div>
-<div id="content" align="center" style="margin-top: 50px;background-image: linear-gradient(#e6fad5,#C09A6B);">
+<div id="content" align="center"
+     style="margin-top: 50px;background-image: linear-gradient(#e6fad5,#C09A6B);">
+    <h1 align="center">Forma Jurídica</h1>
     <div class="row">
         <div class="column">
-            <iframe width="1000" height="562"
-                    src="https://youtu.be/ljdDg-AYpss?autoplay=0" frameborder="0" scrolling="no"
-                    allowfullscreen>
-            </iframe>
+            <div class="jumbotron  shadow p-3 mb-5" align="left" style="background-color: #c4e6ff ;">
+                <p>
+                    Nuestra empresa es de Sociedad Limitada, cumplimos con todos los requisitos necesarios y es la forma jurídica que más se adapta a nuestras necesidades, como es:
+                </p>
+                <ol>
+                    <li>
+                        Capital Social dividido en participaciones.
+                    </li>
+                    <li>
+                        Tributa por el Impuesto de Sociedades.
+                    </li>
+                    <li>
+                        El capital Social mínimo es 3.000€.
+                    </li>
+                    <li>
+                        Los beneficios se reparten entre los socios.
+                    </li>
+                </ol>
+            </div>
         </div>
         <div class="column">
-            <img src="/fragment/logo.png" width="50%">
+            <img id="blah" src="icons/forma_juridica.png" style="width:50%">
         </div>
     </div>
 </div>
