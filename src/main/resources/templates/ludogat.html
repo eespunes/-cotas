@@ -13,13 +13,107 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+    <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            background-color: #C09A6B;
+            margin: 0 0 150px;
+        }
+
+        footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 150px;
+            width: 100%;
+        }
+
+        #background {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 50%;
+            background-color: #e6fad5;
+            z-index: 1;
+        }
+
+        #content {
+            position: relative;
+            z-index: 2;
+            padding: 30px;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+
+        /* Clear floats after image containers */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        #blah1 {
+            border-radius: 15%;
+        }
+
+        #blah2 {
+            border-radius: 20%;
+        }
+
+        #blah3 {
+            border-radius: 30%;
+        }
+    </style>
 </head>
 <body>
 <div th:replace="fragment/header :: header"></div>
 <div id="content" align="center"
      style="margin-top: 50px;background-image: linear-gradient(#e6fad5,#C09A6B);">
     <h1>Ludogat</h1>
-    <h1>EN DESARROLLO...</h1>
+    <div class="row" align="center">
+        <div class="column" align="left">
+            <div class="jumbotron  shadow p-3 mb-5" align="left" style="background-color: #c4e6ff ;">
+                <h2>+Juegos</h2>
+                <p>Realizaremos juegos y actividades enfocados a nuestro público infantil, de esta manera ellos podrán
+                    entretenerse jugando mientras comparten un momento agradable con los gatos.</p>
+            </div>
+        </div>
+        <div class="column" align="center">
+            <img id="blah1" src="icons/masjuegos.png" alt="Index" width="40%">
+        </div>
+    </div>
+    <div class="row" align="center">
+        <div class="column" align="center">
+            <img id="blah2" src="icons/cafeteria.png" alt="Index" width="40%">
+        </div>
+        <div class="column" align="center">
+            <div class="jumbotron  shadow p-3 mb-5" align="left" style="background-color: #c4e6ff ;">
+                <h2>Cafetería</h2>
+                <p>Ofrecemos un espacio para los padres, en el cual podrán desde descansar y pasar un rato agradable
+                    hasta un espacio donde poder llevar a cabo trabajo mientras los niños juegan y aprenden.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row" align="center">
+        <div class="column" align="center">
+            <div class="jumbotron  shadow p-3 mb-5" align="left" style="background-color: #c4e6ff ;">
+                <h2>Charlas</h2>
+                <p>Daremos diferentes charlas tanto en nuestro local como, si llegamos a conseguir la influencia suficiente, en algún colegio o similares</p>
+            </div>
+        </div>
+        <div class="column" align="center">
+            <img id="blah3" src="icons/charlas.png" alt="Index" width="40%">
+        </div>
+    </div>
 </div>
 <div id="background"></div>
 <div th:replace="fragment/footer :: footer"></div>

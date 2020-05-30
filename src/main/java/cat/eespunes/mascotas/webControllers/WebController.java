@@ -61,9 +61,9 @@ public class WebController {
         return "medio_ambiente";
     }
 
-    @GetMapping("/prl")
-    public String prl() {
-        return "prl";
+    @GetMapping("/prevencion_riesgos_laborales")
+    public String prevencion_riesgos_laborales() {
+        return "prevencion_riesgos_laborales";
     }
 
     @GetMapping("/apadrina/animales")

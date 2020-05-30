@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>Medio Ambiente</title>
+    <title>PRL</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -43,7 +43,6 @@
             z-index: 2;
             padding: 30px;
         }
-
         .column {
             float: left;
             width: 50%;
@@ -56,7 +55,6 @@
             clear: both;
             display: table;
         }
-
         #blah {
             border-radius: 5%;
         }
@@ -67,27 +65,24 @@
 <div th:replace="fragment/header :: header"></div>
 <div id="content" align="center"
      style="margin-top: 50px;background-image: linear-gradient(#e6fad5,#C09A6B);">
-    <h1 align="center">Medio Ambiente</h1>
+    <h1 align="center">Prevención de Riesgos Laborales</h1>
     <div class="row">
         <div class="column">
-            <img id="blah" src="icons/medio_ambiente.png" style="width:50%">
-        </div>
-        <div class="column" style="margin-top: 3%">
             <div class="jumbotron  shadow p-3 mb-5" align="left" style="background-color: #c4e6ff ;">
+                <p>Nuestros riesgos más comunes suelen ser mordiscos y arañazos involuntarios de las mascotas. También es posible que tengamos algún animal con alguna enfermedad.
+                    Para prevenir estos riesgos haremos:
 
-                <p>Nuestro compromiso con el medio ambiente será el siguiente:
-
-                <ul>
-                    <li>Asegurar la protección del medio ambiente</li>
-                    <li> Asegurar el cumplimiento de los requisitos legales ambientales aplicables</li>
-                    <li> Establecer indicadores</li>
-                    <li> Mantener la sensibilización y concienciación</li>
-                    <li> Precaución</li>
-                    <li> Prevención</li>
-                    <li> Corrección</li>
-                </ul>
                 </p>
+                <ul>
+                    <li>Formación +Cotas será una de las claves para prevenir el riesgo.</li>
+                    <li>Todos los animales tendrán la vacuna de la rabia.</li>
+                    <li>Botiquín de primeros auxilios.</li>
+                    <li>Seguro médico.</li>
+                </ul>
             </div>
+        </div>
+        <div class="column">
+            <img id="blah" src="icons/prevencion_riesgos_laborales.png" style="width:50%">
         </div>
     </div>
 </div>
